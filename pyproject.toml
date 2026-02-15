@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Topsis-Suwan-102317217"
+version = "0.0.1"
+authors = [
+  { name="Suwan", email="agarwalsuwan2004@gmail.com" }
+]
+description = "A Python implementation of TOPSIS method"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.8"
+dependencies = [
+    "pandas",
+    "numpy"
+]
+
+[project.scripts]
+topsis = "TopsisSuwan102317217.topsis:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

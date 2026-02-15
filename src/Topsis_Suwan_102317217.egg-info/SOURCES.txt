@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/TopsisSuwan102317217/__init__.py
+src/TopsisSuwan102317217/topsis.py
+src/Topsis_Suwan_102317217.egg-info/PKG-INFO
+src/Topsis_Suwan_102317217.egg-info/SOURCES.txt
+src/Topsis_Suwan_102317217.egg-info/dependency_links.txt
+src/Topsis_Suwan_102317217.egg-info/entry_points.txt
+src/Topsis_Suwan_102317217.egg-info/requires.txt
+src/Topsis_Suwan_102317217.egg-info/top_level.txt
