@@ -248,4 +248,137 @@ This project demonstrates the complete lifecycle of:
 - Distribution through PyPI
 - Reproducible installation
 
+---
+
+# 15. Part II – Web Service using Streamlit
+
+In addition to the command-line interface, this project also includes a web-based implementation of TOPSIS using Streamlit.
+
+This web application allows users to:
+
+- Upload a CSV file
+- Enter weights
+- Enter impacts
+- Provide an email ID
+- Generate the TOPSIS result file
+
+The web interface validates all inputs before processing.
+
+---
+
+## 15.1 Functional Requirements
+
+The web service ensures:
+
+- User must upload an input CSV file
+- Number of weights must equal number of criteria columns
+- Number of impacts must equal number of criteria columns
+- Impacts must be either `+` or `-`
+- Weights must be comma-separated numeric values
+- Email ID format must be valid
+- Result file is generated only after successful validation
+
+---
+
+## 15.2 Web Application Flow
+
+```mermaid
+flowchart TD
+    A[User Uploads CSV] --> B[Enter Weights]
+    B --> C[Enter Impacts]
+    C --> D[Enter Email ID]
+    D --> E[Validate All Inputs]
+    E -->|Valid| F[Run TOPSIS Algorithm]
+    F --> G[Generate Result File]
+    G --> H[Display / Send Result]
+    E -->|Invalid| I[Show Error Message]
+```
+
+---
+
+## 15.3 Running the Web Application Locally
+
+Activate virtual environment:
+
+```bash
+.venv\Scripts\activate
+```
+
+Install required dependencies:
+
+```bash
+pip install streamlit pandas numpy
+```
+
+Run the application:
+
+```bash
+streamlit run app.py
+```
+
+After running, open:
+
+```
+http://localhost:8501
+```
+
+The web interface will be available in the browser.
+
+---
+
+## 15.4 Web Project Structure
+
+```
+Topsis-Suwan-102317217/
+│
+├── app.py
+├── src/
+│   └── TopsisSuwan102317217/
+│       ├── __init__.py
+│       └── topsis.py
+│
+├── README.md
+├── pyproject.toml
+├── setup.cfg
+```
+
+---
+
+## 15.5 Integration with Core Algorithm
+
+The Streamlit application reuses the same TOPSIS implementation from:
+
+```
+TopsisSuwan102317217/topsis.py
+```
+
+This ensures:
+
+- No duplication of logic
+- Consistent ranking results
+- Single source of truth for algorithm implementation
+
+---
+
+## 15.6 Deployment (Optional)
+
+The Streamlit application can be deployed using:
+
+- Streamlit Community Cloud
+- Render
+- Railway
+- Any cloud VM running Python
+
+Basic deployment steps:
+
+1. Push project to GitHub
+2. Connect repository to Streamlit Cloud
+3. Set entry file as `app.py`
+4. Deploy
+
+---
+
+This completes the second part of the assignment by providing a user-friendly web interface for the TOPSIS algorithm.
+
+
 The repository serves as both an academic submission and a reproducible packaging reference.
